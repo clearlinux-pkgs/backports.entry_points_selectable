@@ -4,7 +4,7 @@
 #
 Name     : backports.entry_points_selectable
 Version  : 1.0.2
-Release  : 1
+Release  : 2
 URL      : https://files.pythonhosted.org/packages/d9/ee/7503b4a39d212e23f795ed979e5d4f1ab418d7d4df1edd201bc432428d2d/backports.entry_points_selectable-1.0.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/d9/ee/7503b4a39d212e23f795ed979e5d4f1ab418d7d4df1edd201bc432428d2d/backports.entry_points_selectable-1.0.2.tar.gz
 Summary  : Compatibility shim providing selectable entry points for older implementations
@@ -63,7 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1617314998
+export SOURCE_DATE_EPOCH=1617318378
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -84,6 +84,9 @@ python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
+## Remove excluded files
+rm -f %{buildroot}/usr/lib/python3.9/site-packages/backports/__init__.py
+rm -f %{buildroot}/usr/lib/python3.9/site-packages/backports/__pycache__/__init__.cpython-39.pyc
 
 %files
 %defattr(-,root,root,-)
