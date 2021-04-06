@@ -1,5 +1,5 @@
 PKG_NAME := backports.entry_points_selectable
-URL = https://files.pythonhosted.org/packages/d9/ee/7503b4a39d212e23f795ed979e5d4f1ab418d7d4df1edd201bc432428d2d/backports.entry_points_selectable-1.0.2.tar.gz
+URL = https://files.pythonhosted.org/packages/6b/3f/a0466ad0b536a1dbcf54ec79c4b0f92fdd8ede0407f9246486eadf9e13fb/backports.entry_points_selectable-1.0.3.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
